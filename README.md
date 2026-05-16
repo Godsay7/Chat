@@ -1,4 +1,4 @@
-# Laboratory Work 1
+# Laboratory Work Chat
 ## Designing a Messaging System
 
 ### Variant 6 — Message Editing & Deletion
