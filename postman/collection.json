@@ -1,0 +1,100 @@
+{
+    "info": {
+        "name": "Messenger API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create User Alice",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:5000/users",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\": \"Alice\"}"
+                }
+            }
+        },
+        {
+            "name": "Create User Bob",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:5000/users",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\": \"Bob\"}"
+                }
+            }
+        },
+        {
+            "name": "Create Conversation",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:5000/conversations",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"type\": 0, \"memberIds\": [\"ALICE_ID\", \"BOB_ID\"]}"
+                }
+            }
+        },
+        {
+            "name": "Send Message",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:5000/messages",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"conversationId\": \"CONV_ID\", \"senderId\": \"ALICE_ID\", \"text\": \"Hello!\"}"
+                }
+            }
+        },
+        {
+            "name": "Edit Message",
+            "request": {
+                "method": "PATCH",
+                "url": "http://localhost:5000/messages/MESSAGE_ID?requesterId=ALICE_ID",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"text\": \"Hello, edited!\"}"
+                }
+            }
+        },
+        {
+            "name": "Get Message History",
+            "request": {
+                "method": "GET",
+                "url": "http://localhost:5000/conversations/CONV_ID/messages"
+            }
+        }
+    ]
+}
