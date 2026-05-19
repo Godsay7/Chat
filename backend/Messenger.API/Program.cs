@@ -38,10 +38,14 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     var env = scope.ServiceProvider.GetRequiredService<IHostEnvironment>();
-    if (useInMemoryDb)
-        db.Database.EnsureCreated();
-    else
-        DbInitializer.Initialize(db, env);
+
+    if (!env.IsEnvironment("Testing")) // <-- обгорнути в цю перевірку
+    {
+        if (useInMemoryDb)
+            db.Database.EnsureCreated();
+        else
+            DbInitializer.Initialize(db, env);
+    }
 }
 
 app.UseCors();

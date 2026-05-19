@@ -449,3 +449,4 @@ D:\Unik\2 course\2 semester\chat-app\backend\Messenger.Tests\obj\Debug\net10.0\r
 D:\Unik\2 course\2 semester\chat-app\backend\Messenger.Tests\obj\Debug\net10.0\Messenger.Tests.pdb
 D:\Unik\2 course\2 semester\chat-app\backend\Messenger.Tests\obj\Debug\net10.0\Messenger.Tests.genruntimeconfig.cache
 D:\Unik\2 course\2 semester\chat-app\backend\Messenger.Tests\obj\Debug\net10.0\ref\Messenger.Tests.dll
+D:\Unik\2 course\2 semester\chat-app\backend\Messenger.Tests\obj\Debug\net10.0\Messenger.Tests.sourcelink.json
