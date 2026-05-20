@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\Messenger.Tests\\Messenger.Tests.csproj": {}
+    "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\messenger.Tests\\Messenger.Tests.csproj": {}
   },
   "projects": {
     "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\Messenger.API\\Messenger.API.csproj": {
@@ -502,14 +502,14 @@
         }
       }
     },
-    "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\Messenger.Tests\\Messenger.Tests.csproj": {
+    "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\messenger.Tests\\Messenger.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\Messenger.Tests\\Messenger.Tests.csproj",
+        "projectUniqueName": "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\messenger.Tests\\Messenger.Tests.csproj",
         "projectName": "Messenger.Tests",
-        "projectPath": "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\Messenger.Tests\\Messenger.Tests.csproj",
+        "projectPath": "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\messenger.Tests\\Messenger.Tests.csproj",
         "packagesPath": "C:\\Users\\Maksym\\.nuget\\packages\\",
-        "outputPath": "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\Messenger.Tests\\obj\\",
+        "outputPath": "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\messenger.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

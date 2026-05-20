@@ -13,11 +13,18 @@ namespace Messenger.Tests
     public class MessengerIntegrationTest
     {
         private readonly HttpClient _client;
+        private readonly TestWebApplicationFactory _factory;
         private const string TestPassword = "secret123";
 
         public MessengerIntegrationTest()
         {
-            _client = new TestWebApplicationFactory().CreateClient();
+            _factory = new TestWebApplicationFactory();
+            _client = _factory.CreateClient();
+
+            using var scope = _factory.Services.CreateScope();
+            var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
         }
 
         [Fact]
@@ -40,7 +47,7 @@ namespace Messenger.Tests
             var history = await historyRes.Content.ReadFromJsonAsync<List<MessageDto>>();
 
             Assert.Single(history!);
-            Assert.Equal("Hello Bob, edited!", history[0].Text);
+            Assert.Equal("Hello Bob, edited!", history![0].Text);
             Assert.True(history[0].IsEdited);
             Assert.NotNull(history[0].EditedAt);
         }

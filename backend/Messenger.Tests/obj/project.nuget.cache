@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CTWq7EctMO8=",
+  "dgSpecHash": "KaBafiqKkmY=",
   "success": true,
-  "projectFilePath": "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\Messenger.Tests\\Messenger.Tests.csproj",
+  "projectFilePath": "D:\\Unik\\2 course\\2 semester\\chat-app\\backend\\messenger.Tests\\Messenger.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maksym\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
     "C:\\Users\\Maksym\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\10.0.8\\microsoft.aspnetcore.mvc.testing.10.0.8.nupkg.sha512",

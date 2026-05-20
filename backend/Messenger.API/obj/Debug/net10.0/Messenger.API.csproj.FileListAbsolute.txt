@@ -144,3 +144,4 @@ d:\Unik\2 course\2 semester\chat-app\backend\Messenger.API\obj\Debug\net10.0\Mes
 d:\Unik\2 course\2 semester\chat-app\backend\Messenger.API\obj\Debug\net10.0\Messenger.API.genruntimeconfig.cache
 d:\Unik\2 course\2 semester\chat-app\backend\Messenger.API\obj\Debug\net10.0\ref\Messenger.API.dll
 D:\Unik\2 course\2 semester\chat-app\backend\Messenger.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\Unik\2 course\2 semester\chat-app\backend\messenger.api\obj\Debug\net10.0\Messenger.API.sourcelink.json
