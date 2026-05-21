@@ -10,15 +10,15 @@ using Xunit;
 
 namespace Messenger.Tests
 {
-    public class MessengerIntegrationTest
+    public class MessengerIntegrationTest : IClassFixture<TestWebApplicationFactory>
     {
         private readonly HttpClient _client;
         private readonly TestWebApplicationFactory _factory;
         private const string TestPassword = "secret123";
 
-        public MessengerIntegrationTest()
+        public MessengerIntegrationTest(TestWebApplicationFactory factory)
         {
-            _factory = new TestWebApplicationFactory();
+            _factory = factory;
             _client = _factory.CreateClient();
 
             using var scope = _factory.Services.CreateScope();
