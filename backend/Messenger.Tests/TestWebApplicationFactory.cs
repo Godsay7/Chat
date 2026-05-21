@@ -1,13 +1,16 @@
+using System.Data.Common;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Data.Sqlite; // Переконайся, що є цей using
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Messenger.API.Storage;
 
 namespace Messenger.Tests;
 
 public class TestWebApplicationFactory : WebApplicationFactory<Program>
 {
-    private readonly string _dbName = "TestDb_" + Guid.NewGuid();
+    private DbConnection? _connection;
 
     protected override void ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder builder)
     {
@@ -15,12 +18,25 @@ public class TestWebApplicationFactory : WebApplicationFactory<Program>
 
         builder.ConfigureServices(services =>
         {
-            var descriptor = services.SingleOrDefault(
-                d => d.ServiceType == typeof(DbContextOptions<AppDbContext>));
-            if (descriptor != null) services.Remove(descriptor);
+            // 1. Видаляємо старі реєстрації контексту
+            services.RemoveAll(typeof(DbContextOptions<AppDbContext>));
+            services.RemoveAll(typeof(DbConnection));
 
+            // 2. Створюємо з'єднання з SQLite у пам'яті
+            // Важливо: воно має залишатися відкритим протягом всього часу життя тестів
+            _connection = new SqliteConnection("DataSource=:memory:");
+            _connection.Open();
+
+            // 3. Реєструємо DbContext з нашим In-Memory з'єднанням SQLite
             services.AddDbContext<AppDbContext>(opt =>
-                opt.UseInMemoryDatabase(_dbName));
+                opt.UseSqlite(_connection));
         });
+    }
+
+    // Закриваємо з'єднання після завершення тестів
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+        _connection?.Dispose();
     }
 }

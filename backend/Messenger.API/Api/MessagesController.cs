@@ -24,7 +24,7 @@ public class MessagesController : ControllerBase
         }
         catch (ArgumentException ex) { return BadRequest(new { error = ex.Message }); }
         catch (KeyNotFoundException ex) { return NotFound(new { error = ex.Message }); }
-        catch (UnauthorizedAccessException ex) { return Forbid(ex.Message); }
+        catch (UnauthorizedAccessException) { return StatusCode(StatusCodes.Status403Forbidden); }
     }
 
     [HttpPatch("{id}")]
@@ -41,6 +41,6 @@ public class MessagesController : ControllerBase
         }
         catch (ArgumentException ex) { return BadRequest(new { error = ex.Message }); }
         catch (KeyNotFoundException ex) { return NotFound(new { error = ex.Message }); }
-        catch (UnauthorizedAccessException) { return Forbid(); }
+        catch (UnauthorizedAccessException) { return StatusCode(StatusCodes.Status403Forbidden); }
     }
 }
